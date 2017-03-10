@@ -1,0 +1,14 @@
+1. routing
+1.1 under the src/app ->   component folder > navbar folder > navbar.component.ts > navbar.component.html
+1.2 add templateUrl for html page
+1.3  add moduleId: module.id (we have to use for routing) ->  disable tsconfig.json support
+1.4 change class name to NavbarComponent
+1.5 adding NavbarComponent to  app.component.ts  , add directives: [NavbarComponent] under the @Component
+1.6 in app.component.ts change template to -> templateUrl: 'app.component.hmtl' and dont forget moduleId.
+1.7 create app.component.hmtl under /app and add <navbar></nabar> then try to run.
+1.8 !! add NavbarComponent to app.module.ts and  to declarations .
+
+1.9 add about folder under /component  , about.component.ts  , about.component.html
+1.10 <base href="/"> to index.html under <body>
+1.11 add https://bootswatch.com/sandstone/bootstrap.min.css to index.html
+1.12 /app/app.routes.ts

@@ -1,0 +1,99 @@
+<br/><br/><br/><div class="jumbotron jumbotron-albums jumbotron-hero">
+  <div class="jumbotron-bg lazy lazy-no-small hidden-sm hidden-md hidden-lg" data-original="//d2c87l0yth4zbw-2.global.ssl.fastly.net/i/home/bg-albums.png"></div>
+
+  <div class="container">
+    <div id="carousel-tour" class="carousel slide" data-ride="carousel" data-interval="false">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-tour" data-slide-to="0" class="active js-button-hero-carousel-dots" data-tracking='{"category": "home", "action": "carousel-dots"}'></li>
+        <li data-target="#carousel-tour" data-slide-to="1" class="js-button-hero-carousel-dots" data-tracking='{"category": "home", "action": "carousel-dots"}'></li>
+        <li data-target="#carousel-tour" data-slide-to="2" class="js-button-hero-carousel-dots" data-tracking='{"category": "home", "action": "carousel-dots"}'></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <h1>
+      <span class="text-white">
+                Herkes için müzik.
+      </span>
+          </h1>
+          <a href="/tr/download/" class="btn btn-solid js-goto-signup js-button-hero-get-free" data-tracking='{"category": "home (premium)", "action": "free"}'>
+            ngSPOTIFY'I ÜCRETSİZ OLARAK AL
+          </a>
+          <a href="/tr/premium/" class="btn btn-halo js-button-hero-get-premium" data-tracking='{"category": "home (premium)", "action": "premium"}'>
+            ngSPOTIFY PREMIUM'A GEÇ
+          </a>
+        </div>
+
+        <div class="item">
+          <h1>
+      <span class="text-white">
+
+      </span>
+          </h1>
+          <a href="/tr/family/" class="btn btn-solid js-button-hero-family" data-tracking='{"category": "home (family)", "action": "learn-more"}'>
+            DAHA FAZLA BİLGİ
+          </a>
+        </div>
+
+        <div class="item">
+          <h1>
+      <span class="text-white">
+                ngSpotify'ı PlayStation®'da dinle.
+      </span>
+          </h1>
+          <a href="/tr/playstation/" class="btn btn-solid js-button-hero-playstation" data-tracking='{"category": "home (playstation)", "action": "learn-more"}'>
+            DAHA FAZLA BİLGİ
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control js-button-hero-carousel-left-arrow" href="#carousel-tour" data-slide="prev" data-tracking='{"category": "home", "action": "carousel-left"}'>
+        <span class="icon-prev"></span>
+        <span class="sr-only">
+                            Önceki
+            </span>
+      </a>
+      <a class="right carousel-control js-button-hero-carousel-right-arrow" href="#carousel-tour" data-slide="next" data-tracking='{"category": "home", "action": "carousel-right"}'>
+        <span class="icon-next"></span>
+        <span class="sr-only">
+                            Sonraki
+            </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <a class="btn-scroll btn-scroll-aquamarine " name="whats-on-spotify" href="#whats-on-spotify"   data-ga-category="home"   data-ga-action="arrows"   data-ga-label="learn-more" >
+
+    <span class="btn-scroll-text btn-scroll-text-above">ngSPOTIFY HAKKINDA BİLGİ</span>
+  </a>
+
+</div><br/>
+<hr/><br/>
+<form>
+  <div class="form-group">
+    <input type="text" name="searchStr"  [(ngModel)]="searchStr" (keyup)="searchMusic()" class="form-control" placeholder="Search Music..." >
+  </div>
+</form>
+
+<!--//artists results-->
+<div *ngIf="searchResult">
+  <div *ngFor="let result of searchResult">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="search-res well">
+          <h4><a routerLink="/artist/{{result.id}}">{{result.name}}</a></h4>
+          <div>
+            <strong>Genres: </strong>
+            <span *ngFor="let genre of result.genres">{{genre}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
